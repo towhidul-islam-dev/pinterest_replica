@@ -1,10 +1,24 @@
-import Image from 'next/image'
-import { BeakerIcon } from '@heroicons/react/24/solid'
+import Image from "next/image";
+import { BeakerIcon } from "@heroicons/react/24/solid";
+import Homepage from "./home/page.jsx";
+import {
+  QuestionMarkCircleIcon,
+  EllipsisHorizontalCircleIcon,
+  MagnifyingGlassIcon,
+  XMarkIcon,
+  ArrowUpRightIcon,
+  ArrowUpTrayIcon,
+  UserPlusIcon,
+  HeartIcon,
+  BellIcon,
+  ChevronDownIcon,
+  CheckIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 export default function Home() {
   return (
-    <h2>
-      making a pinterest clone.
-      <BeakerIcon className="h-6 w-6 text-blue-500" />
-    </h2>
-  )
+    <>
+      <Homepage />
+    </>
+  );
 }

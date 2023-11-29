@@ -12,6 +12,11 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      gridTemplateRows: {
+        layout: "repeat(auto-fill, minmax(300px, 1fr))",
+      },
+
       colors: {
         primary_shadow: "#E9E9E9",
         shadow: "#e2e2e2",
