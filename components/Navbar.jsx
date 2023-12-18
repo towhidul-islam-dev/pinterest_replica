@@ -9,19 +9,24 @@ import {
   BellIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
+import { useParams } from "next/navigation";
 
 function Navbar() {
+  // const params = useRouter();
+
   return (
     <div className="grid place-items-center px-6 lg:px-8">
       <div className="flex py-4 px-4 lg:px-0 items-center gap-8 justify-center w-full">
         <div>
-          <LifebuoyIcon className="h-10 text-red-500" />
+          <Link href="/" className="capitalize text-lg font-semibold">
+            <LifebuoyIcon className="h-10 text-red-500" />
+          </Link>
         </div>
         <div className="space-x-2">
-          <Link href="#" className="capitalize text-lg font-semibold">
+          <Link href="/" className="capitalize text-lg font-semibold">
             Home
           </Link>
-          <Link href="#" className="capitalize text-lg font-semibold">
+          <Link href="/creator" className="capitalize text-lg font-semibold">
             Create
           </Link>
         </div>
@@ -35,7 +40,7 @@ function Navbar() {
         <div className="flex space-x-1">
           <Link
             className="hover:bg-gray-200 transition-all ease-in-out duration-300 p-2 rounded-full"
-            href="#"
+            href="/notification"
           >
             <BellIcon className="h-7 text-gray-600" />
           </Link>
@@ -48,7 +53,7 @@ function Navbar() {
 
           <Link
             className="hover:bg-gray-200 transition-all ease-in-out duration-300 p-2 rounded-full"
-            href="#"
+            href="/profile"
           >
             <p className="w-7 h-7 grid place-items-center bg-gray-200 rounded-full">
               T

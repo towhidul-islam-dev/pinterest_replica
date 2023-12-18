@@ -152,7 +152,7 @@ function page() {
           return (
             <div key={picture.id}>
               <Link
-                href={`/home/${picture.id}`}
+                href={`/pin/${picture.id}`}
                 className="relative w-full h-full rounded-xl overflow-hidden"
               >
                 <img
