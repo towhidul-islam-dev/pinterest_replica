@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
@@ -9,10 +9,18 @@ import {
   BellIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
-  // const params = useRouter();
+  const route = usePathname();
+  const [currRoute, setCurrRoute] = useState("");
+
+  const currPath = route.split("/")[1];
+  console.log(currPath);
+  useEffect(() => {
+    setCurrRoute(currPath);
+  }, [currPath]);
+  console.log(currRoute);
 
   return (
     <div className="grid place-items-center px-6 lg:px-8">
@@ -23,10 +31,24 @@ function Navbar() {
           </Link>
         </div>
         <div className="space-x-2">
-          <Link href="/" className="capitalize text-lg font-semibold">
+          <Link
+            href="/"
+            className={
+              currPath === ""
+                ? "capitalize text-lg font-semibold text-gray-50 bg-gray-800 rounded-full py-4 px-6"
+                : "capitalize text-lg font-semibold"
+            }
+          >
             Home
           </Link>
-          <Link href="/creator" className="capitalize text-lg font-semibold">
+          <Link
+            href="/creator"
+            className={
+              currPath === "creator"
+                ? "capitalize text-lg font-semibold text-gray-50 bg-gray-800 rounded-full py-4 px-6"
+                : "capitalize text-lg font-semibold"
+            }
+          >
             Create
           </Link>
         </div>
@@ -46,7 +68,7 @@ function Navbar() {
           </Link>
           <Link
             className="hover:bg-gray-200 transition-all ease-in-out duration-300 p-2 rounded-full"
-            href="#"
+            href="/message"
           >
             <EllipsisHorizontalCircleIcon className="h-7 text-gray-600" />
           </Link>
@@ -61,7 +83,7 @@ function Navbar() {
           </Link>
           <Link
             className="hover:bg-gray-200 transition-all ease-in-out duration-300 p-2 rounded-full"
-            href="#"
+            href="/more"
           >
             <ChevronDownIcon className="h-7 text-gray-600" />
           </Link>
