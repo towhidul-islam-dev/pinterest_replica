@@ -1,7 +1,7 @@
 import React from "react";
 
 function page() {
-  return <div>Creator Page</div>;
+	return <div className="pt-20">Creator Page</div>;
 }
 
 export default page;
